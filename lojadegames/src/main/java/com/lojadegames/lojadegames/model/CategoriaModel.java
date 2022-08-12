@@ -24,11 +24,11 @@ public class CategoriaModel {
 	
 	@NotBlank(message = "O atibuto nome deve conter de 3 a 15 caracteres e não ter espaço em branco")
 	@Size(min = 3, max = 15)
-	private String classe;
+	private String categoria;
 	
-	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("categoria")
-	private List<CategoriaModel>categoria;
+	@OneToMany(mappedBy = "categoriamodel", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("categoriamodel")
+	private List<CategoriaModel> categoriamodel;
 		
 	public Long getId() {
 		return id;
@@ -38,19 +38,19 @@ public class CategoriaModel {
 		this.id = id;
 	}
 
-	public String getClasse() {
-		return classe;
-	}
-
-	public void setClasse(String classe) {
-		this.classe = classe;
-	}
-
-	public List<CategoriaModel> getCategoria() {
+	public String getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(List<CategoriaModel> categoria) {
+	public void setCategoria(String categoria) {
 		this.categoria = categoria;
+	}
+
+	public List<CategoriaModel> getCategoriamodel() {
+		return categoriamodel;
+	}
+
+	public void setCategoriamodel(List<CategoriaModel> categoriamodel) {
+		this.categoriamodel = categoriamodel;
 	}
 }

@@ -11,5 +11,5 @@ import com.lojadegames.lojadegames.model.ProdutoModel;
 public interface ProdutoRepository extends JpaRepository <ProdutoModel, Long>{
 	public List<ProdutoModel> findAllByPrecoBetween(@Param("inicio") BigDecimal inicio, @Param("fim") BigDecimal fim);
 
-	public List<ProdutoModel> findAllByItemContainingIgnoreCase(@Param("item") String item);
+	public List<ProdutoModel> findAllByNomeContainingIgnoreCase(@Param("nome") String nome);
 }

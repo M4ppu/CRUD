@@ -40,9 +40,9 @@ public class ProdutoController {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
-	@GetMapping("/item/{produto}")
-	public ResponseEntity<List<ProdutoModel>>getByTitulo(@PathVariable String item){
-		return ResponseEntity.ok(repository.findAllByItemContainingIgnoreCase(item));
+	@GetMapping("/nome/{produto}")
+	public ResponseEntity<List<ProdutoModel>>getByTitulo(@PathVariable String nome){
+		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
 	}
 	
 	@GetMapping("/preco_inicial/{inicio}/preco_final/{fim}")

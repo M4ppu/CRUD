@@ -21,7 +21,7 @@ import com.lojadegames.lojadegames.model.CategoriaModel;
 import com.lojadegames.lojadegames.repository.CategoriaRepository;
 
 @RestController
-@RequestMapping("/classe")
+@RequestMapping("/categoria")
 @CrossOrigin("*")
 public class CategoriaController {
 	
@@ -38,9 +38,9 @@ public class CategoriaController {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
-	@GetMapping("/classe/{classe}")
-	private ResponseEntity<List<CategoriaModel>> getByClasse(@PathVariable String classe){
-		return ResponseEntity.ok(repository.findAllByClasseContainingIgnoreCase(classe));
+	@GetMapping("/categoria/{categoria}")
+	private ResponseEntity<List<CategoriaModel>> getByClasse(@PathVariable String categoria){
+		return ResponseEntity.ok(repository.findAllByCategoriaContainingIgnoreCase(categoria));
 	}
 	
 	@PostMapping
